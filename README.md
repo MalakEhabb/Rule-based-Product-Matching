@@ -1,10 +1,8 @@
-# isupply
- Product Matching Model
-
+# isupply-task
  # Product Matching Model
 
 ## Overview
-This project implements a **Product Matching Model** that identifies similar products between a master product list and a dataset using a combination of text preprocessing, TF-IDF vectorization, cosine similarity, fuzzy matching, and price normalization.
+This project implements a **Product Matching Model** that identifies similar products between a master product list and a dataset using a combination of text preprocessing, TF-IDF vectorization, cosine similarity, fuzzy matching, price normalization and weighted confidence score.
 
 ## Features
 - **Arabic Text Normalization**: Handles variations in Arabic text by removing tashkeel, normalizing specific characters, and cleaning redundant words.
@@ -13,6 +11,7 @@ This project implements a **Product Matching Model** that identifies similar pro
 - **Cosine Similarity**: Measures text-based similarity between product names.
 - **Fuzzy Matching**: Uses the Levenshtein distance to compare string similarities.
 - **Price Similarity**: Ensures that price variations are considered in the matching process.
+- **Optimized Weights**: Optimized scoring weights according to performance evaluation.
 - **Weighted Scoring System**: Combines cosine similarity, fuzzy matching, and price similarity to determine the best product match.
 
 ## Dependencies
@@ -24,7 +23,7 @@ pip install numpy pandas scikit-learn fuzzywuzzy openpyxl
 ## Usage
 1. Place the dataset in the working directory.
 2. Run the script to match products between the master file and the dataset.
-3. The output file `Matched Dataset.xlsx` will be generated with matched SKUs and similarity scores.
+3. The output file `Matched Dataset.xlsx` will be generated with matched SKUs and confidence scores.
 
 ### Example Usage:
 ```python
