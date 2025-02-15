@@ -50,6 +50,7 @@ print("✅ Matching Completed and Saved!")
 - Ensure that both product names in English and Arabic exist in the dataset for better matching.
 - The `words_to_remove` list can be updated to refine the text cleaning process.
 - Ensure the data has a 'seller_price_name' column or modify the column name in the pipeline
+- The evaluation and Visualization provided in the notebook are based on the ground truths (SKUs) provided in the dataset sheet
 
 
 
