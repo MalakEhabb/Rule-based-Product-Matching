@@ -21,7 +21,9 @@ pip install numpy pandas scikit-learn fuzzywuzzy python-Levenshtein openpyxl
 ```
 
 ## Example usage
-` python matcher.py <file.xlsx> <MasterSheet> <DatasetSheet>`
+```bash
+python matcher.py <file.xlsx> <MasterSheet> <DatasetSheet>
+```
 
 
 ## Notes
