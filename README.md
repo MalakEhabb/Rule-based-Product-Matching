@@ -17,7 +17,7 @@ This project implements a **Product Matching Model** that identifies similar pro
 ## Dependencies
 This model requires the following Python libraries:
 ```bash
-pip install numpy pandas scikit-learn fuzzywuzzy openpyxl
+pip install numpy pandas scikit-learn fuzzywuzzy python-Levenshtein openpyxl
 ```
 
 ## Usage
