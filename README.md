@@ -20,10 +20,8 @@ This model requires the following Python libraries:
 pip install numpy pandas scikit-learn fuzzywuzzy python-Levenshtein openpyxl
 ```
 
-## Usage
-1. Place the dataset in the working directory.
-2. Run the script to match products between the master file and the dataset.
-3. The output file `matched_products.xlsx` will be generated with matched SKUs and confidence scores.
+## Example usage
+` python matcher.py <file.xlsx> <MasterSheet> <DatasetSheet>`
 
 
 ## Notes
