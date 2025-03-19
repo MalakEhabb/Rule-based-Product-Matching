@@ -1,12 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import numpy as np
 import pandas as pd
 import re
+import sys
 import time
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -114,14 +109,26 @@ def match_products(masterfile, dataset):
     return matches_df
 
 if __name__ == "__main__":
-    # Load sample data
-    masterfile = pd.read_csv("masterfile.csv")
-    dataset = pd.read_csv("dataset.csv")
+    if len(sys.argv) != 4:
+        print("Usage: python product_matcher.py <file.xlsx> <MasterSheet> <DatasetSheet>")
+        sys.exit(1)
+
+    file_path = sys.argv[1]
+    master_sheet = sys.argv[2]
+    dataset_sheet = sys.argv[3]
+
+    # Load Excel file and read the sheets
+    try:
+        masterfile = pd.read_excel(file_path, sheet_name=master_sheet)
+        dataset = pd.read_excel(file_path, sheet_name=dataset_sheet)
+    except Exception as e:
+        print(f"Error loading Excel file: {e}")
+        sys.exit(1)
 
     # Run product matching
     matched_results = match_products(masterfile, dataset)
 
     # Save results
-    matched_results.to_csv("matched_products.csv", index=False)
-    print("Matching complete! Results saved to 'matched_products.csv'.")
-
+    output_filename = "matched_products.xlsx"
+    matched_results.to_excel(output_filename, index=False)
+    print(f"Matching complete! Results saved to '{output_filename}'.")
