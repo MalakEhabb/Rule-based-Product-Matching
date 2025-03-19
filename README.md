@@ -23,33 +23,13 @@ pip install numpy pandas scikit-learn fuzzywuzzy python-Levenshtein openpyxl
 ## Usage
 1. Place the dataset in the working directory.
 2. Run the script to match products between the master file and the dataset.
-3. The output file `Matched Dataset.xlsx` will be generated with matched SKUs and confidence scores.
+3. The output file `matched_products.xlsx` will be generated with matched SKUs and confidence scores.
 
-### Example Usage:
-```python
-import pandas as pd
-
-masterfile = pd.read_excel("Product Matching Dataset.xlsx", sheet_name="Master File")
-dataset = pd.read_excel("Product Matching Dataset.xlsx", sheet_name="Dataset")
-
-matched_results = match_products(masterfile, dataset)
-matched_results.to_excel("Matched Dataset.xlsx", index=False)
-print("✅ Matching Completed and Saved!")
-```
-
-## File Structure
-```
-- Product Matching Model
-  |-- product_matching.py (Main script)
-  |-- Product Matching Dataset.xlsx (Input data)
-  |-- Matched Dataset.xlsx (Output file)
-  |-- README.md (Project documentation)
-```
 
 ## Notes
 - Ensure that both product names in English and Arabic exist in the dataset for better matching.
 - The `words_to_remove` list can be updated to refine the text cleaning process.
-- Ensure the data has a 'seller_price_name' column or modify the column name in the pipeline
+- Ensure the data has a 'seller_price_name' column 
 - The evaluation and Visualization provided in the notebook are based on the ground truths (SKUs) provided in the dataset sheet
 
 
